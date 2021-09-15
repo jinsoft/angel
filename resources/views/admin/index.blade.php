@@ -29,11 +29,6 @@
                         <i class="layui-icon layui-icon-website"></i>
                     </a>
                 </li>
-                <li class="layui-nav-item" lay-unselect>
-                    <a href="javascript:;" layadmin-event="refresh" title="刷新">
-                        <i class="layui-icon layui-icon-refresh-3"></i>
-                    </a>
-                </li>
                 <li class="layui-nav-item layui-hide-xs" lay-unselect>
                     <input type="text" placeholder="搜索..." autocomplete="off" class="layui-input layui-input-search" layadmin-event="serach" lay-action="template/search.html?keywords=">
                 </li>
@@ -440,6 +435,7 @@
         <!-- 页面标签 -->
         <div class="layadmin-pagetabs" id="LAY_app_tabs">
             <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
+            <div class="layui-icon layadmin-tabs-control layui-icon-refresh-3" layadmin-event="refresh"></div>
             <div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage"></div>
             <div class="layui-icon layadmin-tabs-control layui-icon-down">
                 <ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">

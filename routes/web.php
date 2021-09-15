@@ -17,21 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
-    Route::get('/', 'IndexController@index');
-    Route::group(['middleware' => 'auth:admin'], function () {
-        Route::get('info', 'IndexController@info');
-    });
-});
-
+// Auth::routes();
+//
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('logout', 'IndexController@logout');
     Route::get('/', 'IndexController@index');
     Route::get('/dashboard', 'IndexController@dashboard')->name('admin.dashboard');
+    Route::group(['middleware' => 'auth:admin'], function () {
+        Route::get('info', 'IndexController@info');
+    });
 });
