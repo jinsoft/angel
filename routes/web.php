@@ -28,4 +28,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('info', 'IndexController@info');
     });
+    Route::group(['prefix' => 'administrators'], function () {
+        Route::get('/', 'AdminsController@index')->name('admin.index');
+        Route::get('/data-list', 'AdminsController@list')->name('admin.data.list');
+    });
 });

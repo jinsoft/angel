@@ -15,8 +15,7 @@
     @endsection
 </head>
 <body>
-@section('content')
-@endsection
+@yield('content')
 
 <script src=" {{ asset('/static/layui/layui.js') }}"></script>
 <script>
@@ -26,5 +25,7 @@
         index: 'lib/index' //主入口模块
     }).use('index');
 </script>
+
+@yield('js')
 </body>
 </html>
